@@ -1,0 +1,40 @@
+
+
+Items ---- Place them into resources\[framework]\rsg-core\shared (items.lua )
+
+
+    ['moonshine20']     = {['name'] = 'moonshine20',    ['label'] = 'Moonshine 20 Proof',   ['weight'] = 100,   ['type'] = 'item',  ['image'] = 'consumable_moonshine20.png',       ['unique'] = false, ['useable'] = true,     ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Moonshine 20%'},
+    ['moonshine30']     = {['name'] = 'moonshine30',    ['label'] = 'Moonshine 30 Proof',   ['weight'] = 100,   ['type'] = 'item',  ['image'] = 'consumable_moonshine30.png',       ['unique'] = false, ['useable'] = true,     ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Moonshine 30%'},
+    ['moonshine50']     = {['name'] = 'moonshine50',    ['label'] = 'Moonshine 50 Proof',   ['weight'] = 100,   ['type'] = 'item',  ['image'] = 'consumable_moonshine50.png',       ['unique'] = false, ['useable'] = true,     ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Moonshine 50%'},
+    ['moonshine80']     = {['name'] = 'moonshine80',    ['label'] = 'Moonshine 80 Proof',   ['weight'] = 100,   ['type'] = 'item',  ['image'] = 'consumable_moonshine80.png',       ['unique'] = false, ['useable'] = true,     ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Moonshine 80%'},
+    ['moonshine100']    = {['name'] = 'moonshine100',   ['label'] = 'Moonshine 99 Proof',   ['weight'] = 100,   ['type'] = 'item',  ['image'] = 'consumable_moonshine100.png',      ['unique'] = false, ['useable'] = true,     ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Moonshine 99%'},
+
+Add Hops to farming server - 
+
+	-- hops
+		RSGCore.Functions.CreateUseableItem("hopseed", function(source, item)
+			local src = source
+			local Player = RSGCore.Functions.GetPlayer(src)
+			TriggerClientEvent('rsg-farmer:client:plantNewSeed', src, 'hops', 'engmace_p', 'hopseed')
+		end)
+		
+
+    ['hops']            = {['name'] = 'hops',           ['label'] = 'Hops',                 ['weight'] = 0,     ['type'] = 'item',  ['image'] = 'hops.png',         ['unique'] = false, ['useable'] = false,    ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'used in brewing'},
+    ['hopseed']         = {['name'] = 'hopseed',        ['label'] = 'Hop Seed',             ['weight'] = 0,     ['type'] = 'item',  ['image'] = 'hops.png',         ['unique'] = false, ['useable'] = true,     ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'used in farming'},
+
+
+
+Add the Following to your Metadata:		" \resources\[framework]\rsg-core\server\player.lua "
+
+		Found at Lines 100 ~ 
+
+--
+	PlayerData.metadata["moonrep"] = PlayerData.metadata["moonrep"] or 0
+    PlayerData.metadata["moonup"] = PlayerData.metadata["moonup"] or 0
+--	
+
+Pictures -  Place them into resources\[framework]\rsg-inventory\html\images
+
+
+Locations are based off of Moonshine Interiours
+
