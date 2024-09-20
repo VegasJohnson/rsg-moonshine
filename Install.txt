@@ -38,3 +38,4 @@ Pictures -  Place them into resources\[framework]\rsg-inventory\html\images
 
 Locations are based off of Moonshine Interiours
 
+Upgrade requirements are at the top of the Client.lua
